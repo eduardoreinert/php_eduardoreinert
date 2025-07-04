@@ -10,6 +10,7 @@
         # index 0123456789012345
         $name="Stefanie Hatcher";
         $length= strlen($name);
+        #usado para comparar ordem alfabética
         $cmp = strcmp($name, "Brian Le");
         $index= strpos($name, "e");
         $first= substr($name, 9, 5);
