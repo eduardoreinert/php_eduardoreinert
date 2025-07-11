@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de IF em PHP</title>
+    <title>Exemplo de FOR em PHP</title>
 </head>
 <body>
-    <?php 
-        //$name = "Xenia";
-        //$name = null;
-        if (isset($name)){
-            print "this line isn't going to be reached.";
-        };
+    <?php
+        for($i = 0; $i < 10; $i++){
+            echo "O quadrado de $i é ".$i * $i.".</br>";
+        }
     ?>
         <adress>Eduardo Borsato Reinert</adress>
 

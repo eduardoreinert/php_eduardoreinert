@@ -22,5 +22,7 @@
     <p align="center">Posição de primeira letra "e" no nome: <?php echo $index ; ?></p>
     <p align="center">Corta o nome da posição x, até a y: <?php echo $first ; ?></p>
     <p align="center">Coloca o texto em caixa alta: <?php echo $name_upper ; ?></p>
+    <adress>Eduardo Borsato Reinert</adress>
+
 </body>
 </html>
