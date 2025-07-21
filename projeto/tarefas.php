@@ -1,47 +1,38 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de tarefas</title>
-</head>
-<body>
-    <h1>Gerenciador de tarefas</h1>
-    <form>
-        <fieldset>
-            <legend>Nova tarefa</legend>
-            <label>
-                Tarefa:
-                <input type="text" name="nome" />
-            </label>
-            <input type="submit" value="Cadastrar" />
-        </fieldset>
-    </form>
-    <?php
-        $lista_tarefas=array();
+<?php 
+    session_start();
 
-        if(isset($_GET['nome'])){
-            $_SESSION['lista_tarefas'][] = $_GET[
-            'nome'];
+    if(isset($_GET['nome']) && $_GET['nome'] != ''){
+        $tarefa = array();
+        $tarefa['nome'] = $_GET['nome'];
+    
+        if(isset($_GET['descricao'])){
+            $tarefa['descricao'] = $_GET['descricao'];
+        } else {
+            $tarefa['descricao'] = '';
         }
 
-        $lista_tarefas=array();
-
-        if(isset($_SESSION['lista_tarefas'])){
-            $lista_tarefas = $_SESSION[
-                'lista_tarefas'];
+        if(isset($_GET['prazo'])){
+            $tarefa['prazo'] = $_GET['prazo'];
+        } else {
+            $tarefa['prazo'] = '';
         }
-    ?>
-    <table>
-        <tr>
-            <th>Tarefas</th>
-        </tr>
-        <?php foreach ($lista_tarefas as $tarefa) : ?>
-        <tr>
-            <td><?php echo $tarefa; ?> </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-</body>
-</html>
+
+        $tarefa['prioridade'] = $_GET['prioridade'];
+
+        if(isset($_GET['concluida'])){
+            $tarefa['concluida'] = $_GET['concluida'];
+        } else {
+            $tarefa['concluida'] = '';
+        }
+
+        $_SESSION['lista_tarefas'][] = $tarefa;
+    }
+
+    if(array_key_exists('lista_tarefas', $_SESSION)){
+        $lista_tarefas = $_SESSION['lista_tarefas'];
+    } else {
+        $lista_tarefas = [];
+    }
+
+    include "template.php";
+?>

@@ -9,8 +9,9 @@
 </head>
 <body>
     <h2 >Formulário de Clientes</h2>
+    <form method="get">
     <table cellspacing="0" >
-        <form>
+        
             <tr>
                 <th>Clientes</th>
                 <td id="logo"><img src="img/logo.png"></td>
@@ -59,9 +60,9 @@
                     <button id="resetar" type="reset">Limpar</button>
                 </td>
             </tr>
-        </form>
+        
     </table>
-
+    </form>
     <?php
         $lista_campos=array();
         if(isset($_GET['id_usuario'])){
@@ -95,6 +96,10 @@
         if(isset($_GET['sexo'])){
             $_SESSION['lista_campos'][] = $_GET[
             'sexo'];
+        }
+        if(isset($_SESSION['lista_campos'])){
+            $lista_tarefas = $_SESSION[
+                'lista_campos'];
         }
     ?>
 
