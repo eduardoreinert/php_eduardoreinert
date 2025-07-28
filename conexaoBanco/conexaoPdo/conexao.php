@@ -2,7 +2,7 @@
     function conectarBanco(){
         $dsn="mysql:host=localhost;dbname=empresa;charset=utf8";
         $usuario="root";
-        $senha="123";
+        $senha="";
 
         try{
             $conexao=new PDO($dsn,$usuario,$senha,[
