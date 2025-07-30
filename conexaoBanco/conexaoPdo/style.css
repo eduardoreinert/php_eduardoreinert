@@ -1,0 +1,103 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh; /*garante que o corpo tenha pelo menos a altura da tela.*/
+}
+
+main{
+    flex-grow: 1;
+}
+
+/* cabeçalho e rodapé */
+
+header{
+    background-color: rgb(54, 54, 56);
+    color: rgb(255, 255, 255);
+    height: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+footer{
+    background-color: rgb(54, 54, 56);
+    color: rgb(255, 255, 255);
+    height: 50px;
+    margin-bottom: -17px;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Titulos e textos */
+
+h1{
+    font-size: 35px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+h6{
+    margin-top: 13px;
+}
+
+#tit{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#msgErro{
+    text-align: center;
+}
+
+/* caixas */
+
+.card{
+    border-radius: 16px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 5px;
+    margin-right: 3px;
+}
+
+#quadrado1, #quadrado2, #quadrado3{
+    margin-top: 30px;
+}
+
+#quadrado4{
+    margin-left: 230px;
+}
+
+#quadrado4, #quadrado5{
+    margin-top: 15px;
+}
+
+/* botoes */
+
+#botaoNav{
+    margin-left: 30px;
+}
+
+#botaoForm{
+    margin-top: 10px;
+}
+
+/* formulários */
+
+form{
+    text-align: center;
+    margin: 0 auto;
+}
+
+#formAtualizar{
+    margin: 0 auto;
+}
+
+/* inputs e labels */
+
+input{
+    display: block;
+    width: 100%;
+}
+
+label{
+    text-align: left;
+}
