@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 95vh; /*garante que o corpo tenha pelo menos a altura da tela.*/
+    overflow-x: hidden;s
 }
 
 main{
@@ -22,7 +23,7 @@ footer{
     background-color: rgb(54, 54, 56);
     color: rgb(255, 255, 255);
     height: 50px;
-    margin-bottom: -17px;
+    margin-bottom: -38px;
     text-align: center;
     width: 100%;
 }
@@ -46,6 +47,10 @@ h6{
 }
 
 #msgErro{
+    text-align: center;
+}
+
+#msgSucesso{
     text-align: center;
 }
 
@@ -80,7 +85,12 @@ h6{
     margin-top: 10px;
 }
 
-/* formulários */
+#botaoNovo{
+    width: 150px;
+    margin-left: 45%;
+}
+
+/* formulários e tabelas */
 
 form{
     text-align: center;
@@ -89,6 +99,12 @@ form{
 
 #formAtualizar{
     margin: 0 auto;
+}
+
+#tabList{
+    border-radius: 16px;
+    width: 95%;
+    margin-left: 2.5%;
 }
 
 /* inputs e labels */

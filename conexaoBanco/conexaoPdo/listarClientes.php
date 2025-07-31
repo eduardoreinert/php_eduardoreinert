@@ -21,7 +21,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Menu</a>
+        <a class="navbar-brand" href="index.php">Menu</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,8 +38,8 @@
         </div>
     </div>
 </nav>
-    <h2>Lista de Clientes</h2>
-    <table border="1">
+    <h2 id="tit">Lista de Clientes</h2>
+    <table id="tabList"class="table table-dark table-hover" border="1">
         <tr>
             <th>ID</th>
             <th>Nome</th>
