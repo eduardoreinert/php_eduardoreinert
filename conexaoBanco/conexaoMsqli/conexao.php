@@ -1,27 +1,28 @@
 <?php
-    //Habilita relatório detalhado de erros no mysqli
+    //Habilita relatório detalhado de erros no MySQLI
     mysqli_report(MYSQLI_REPORT_ERROR|MYSQLI_REPORT_STRICT);
 
-    //função para conectar ao banco de dados
-    //retorna um objeto de conexão MySqli ou interrompe em caso de erro.
+    /*Função para conectar no banco de dados 
+     *Retorna um objeto de conexão MySQLI 
+     * ou interrompe o script em caso de erro. */
+    function conectadb()
+    {
+        //Configuração de banco de dados
+        $endereco ="localhost";// Endereço do servidor MySQLI.
+        $usuario ="root";//Nome de usuário do banco de dados.
+        $senha ="";//Senha do banco de dados.
+        $banco="empresa";//Nome do banco de dados.
 
-    function conectadb(){
-        //configuração do banco de dados
-        $endereco="localhost";  //endereço do servidor MYSQL
-        $usuario="root";        //nome de usuario do banco de dados
-        $senha="";              //senha do banco de dados
-        $banco="empresa";       //nome do banco de dados
-
-        try{
-            //criação da conexão
-            $con=new mysqli($endereco, $usuario, $senha, $banco);
-
-            //definição do conjunto de caracteres para evitar problemas de acentuação
-            $con->set_charset("utf8mb4"); //retorna o objeto de conexão
-            return $con;
-        } catch(Exception $e) {
-            //exibe uma mensagem de erro e encerra o script
-            die("Erro na conexão:".$e->getMessage());
+        try {
+            //Criação de conexão
+            $con = new mysqli($endereco,$usuario,$senha,$banco);
+    
+            //Definição de conjunto de caracteres para eviar problemas de acentuação
+            $con->set_charset("utf8mb4");
+            return $con; //Retorna o objeto de conexão
+        } catch (Exception $e){
+            //Exibe uma mensagem de erro e encerra o script
+            die("Erro na conexão: ".$e->getMessage());
         }
     }
 ?>
