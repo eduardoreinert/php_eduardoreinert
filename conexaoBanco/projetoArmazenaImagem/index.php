@@ -53,7 +53,7 @@
                         <a href="verImagens.php?id=<?php echo $arquivos['codigo'];?>">Ver Imagem</a>
                     </td>
                     <td align="center">
-                        <a href="excluirImagens.php?id=<?php echo $arquivos['codigo']; ?>">Excluir</a>
+                        <a href="excluirImagem.php?id=<?php echo $arquivos['codigo']; ?>">Excluir</a>
                     </td>
                 </tr>
             <?php } ?>
