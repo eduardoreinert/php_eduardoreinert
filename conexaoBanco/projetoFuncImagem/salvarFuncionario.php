@@ -7,7 +7,7 @@
 
         //cria uma nova imagem em banco com as novas dimensoes
         //imagecreatetruecolor() cria uma nova imagem em branco em alta qualidade
-        $novaImagem=imagecreatetruecolor($lergura,$altura);
+        $novaImagem=imagecreatetruecolor($largura,$altura);
 
         //carrega a imagem original (jpeg) a partir do arquivo
         //imagecreatefromjpeg cria uma imagem php a partir de um jpeg
@@ -15,7 +15,7 @@
 
         //copia e redimensiona a imagem original para a nova
         //imagecopyresampled() copia com redimensionamento e suavização
-        imagecopyresampled($novaImagem,$imagemOriginal, 0, 0, 0, 0, $largura,$altura,$larguraOriginal,$alturaOriginal);
+        imagecopyresampled($novaImagem,$imagemOriginal, 0, 0, 0, 0, $largura, $altura, $larguraOriginal, $alturaOriginal);
 
         //inicia um buffer para guardar a imagem com texto binario
         //ob_start() inicia o "output buffering" guardando a saida
@@ -38,7 +38,7 @@
 
     //configuração do banco de dados
     $host='localhost';
-    $dbname='db_imagem';
+    $dbname='db_imagens';
     $username='root';
     $password='';
 
@@ -57,7 +57,7 @@
                 $tipoFoto=$_FILES['foto']['type']; //pega o tipo mime da imagem
 
                 //redimensiona a imagem
-                $foto=redimensionarImagem($_FILES['foto']['tmp_name'], 300,400); //tmp_name é o caminho temporario
+                $foto=redimensionarImagem($_FILES['foto']['tmp_name'], 300, 400); //tmp_name é o caminho temporario
 
                 //insere no bnco de dados usando sql preparado
                 $sql="INSERT INTO funcionarios (nome,telefone,nome_foto,tipo_foto,foto) values (:nome,:telefone,:nome_foto,:tipo_foto,:foto)";
@@ -82,3 +82,16 @@
         echo "Erro: ".$e->getMessage(); //mostra o erro se houver
     }
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de imagens</title>
+</head>
+<body>
+    <h1>Lista de imagens</h1>
+
+    <a href="consultaFuncionario.php">Listar Funcionários></a>
+</body>
+</html>
